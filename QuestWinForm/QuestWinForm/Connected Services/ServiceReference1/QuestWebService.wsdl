@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddQuest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Tokens" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Badges" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreatorId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddQuestResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Tokens" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Badges" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ShowQuest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShowQuestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShowQuestResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ShowUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShowUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShowUserResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShowLeaderboard">
+        <s:complexType />
+      </s:element>
+      <s:element name="ShowLeaderboardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShowLeaderboardResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShowQuestBoard">
+        <s:complexType />
+      </s:element>
+      <s:element name="ShowQuestBoardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShowQuestBoardResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptQuest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptQuestResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Reward">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tokens" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="badges" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RewardResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddQuestSoapIn">
+    <wsdl:part name="parameters" element="tns:AddQuest" />
+  </wsdl:message>
+  <wsdl:message name="AddQuestSoapOut">
+    <wsdl:part name="parameters" element="tns:AddQuestResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="AddUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShowQuestSoapIn">
+    <wsdl:part name="parameters" element="tns:ShowQuest" />
+  </wsdl:message>
+  <wsdl:message name="ShowQuestSoapOut">
+    <wsdl:part name="parameters" element="tns:ShowQuestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShowUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ShowUser" />
+  </wsdl:message>
+  <wsdl:message name="ShowUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ShowUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShowLeaderboardSoapIn">
+    <wsdl:part name="parameters" element="tns:ShowLeaderboard" />
+  </wsdl:message>
+  <wsdl:message name="ShowLeaderboardSoapOut">
+    <wsdl:part name="parameters" element="tns:ShowLeaderboardResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShowQuestBoardSoapIn">
+    <wsdl:part name="parameters" element="tns:ShowQuestBoard" />
+  </wsdl:message>
+  <wsdl:message name="ShowQuestBoardSoapOut">
+    <wsdl:part name="parameters" element="tns:ShowQuestBoardResponse" />
+  </wsdl:message>
+  <wsdl:message name="AcceptQuestSoapIn">
+    <wsdl:part name="parameters" element="tns:AcceptQuest" />
+  </wsdl:message>
+  <wsdl:message name="AcceptQuestSoapOut">
+    <wsdl:part name="parameters" element="tns:AcceptQuestResponse" />
+  </wsdl:message>
+  <wsdl:message name="RewardSoapIn">
+    <wsdl:part name="parameters" element="tns:Reward" />
+  </wsdl:message>
+  <wsdl:message name="RewardSoapOut">
+    <wsdl:part name="parameters" element="tns:RewardResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QuestWebServiceSoap">
+    <wsdl:operation name="AddQuest">
+      <wsdl:input message="tns:AddQuestSoapIn" />
+      <wsdl:output message="tns:AddQuestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input message="tns:AddUserSoapIn" />
+      <wsdl:output message="tns:AddUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowQuest">
+      <wsdl:input message="tns:ShowQuestSoapIn" />
+      <wsdl:output message="tns:ShowQuestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowUser">
+      <wsdl:input message="tns:ShowUserSoapIn" />
+      <wsdl:output message="tns:ShowUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowLeaderboard">
+      <wsdl:input message="tns:ShowLeaderboardSoapIn" />
+      <wsdl:output message="tns:ShowLeaderboardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowQuestBoard">
+      <wsdl:input message="tns:ShowQuestBoardSoapIn" />
+      <wsdl:output message="tns:ShowQuestBoardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptQuest">
+      <wsdl:input message="tns:AcceptQuestSoapIn" />
+      <wsdl:output message="tns:AcceptQuestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reward">
+      <wsdl:input message="tns:RewardSoapIn" />
+      <wsdl:output message="tns:RewardSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QuestWebServiceSoap" type="tns:QuestWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddQuest">
+      <soap:operation soapAction="http://tempuri.org/AddQuest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowQuest">
+      <soap:operation soapAction="http://tempuri.org/ShowQuest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowUser">
+      <soap:operation soapAction="http://tempuri.org/ShowUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowLeaderboard">
+      <soap:operation soapAction="http://tempuri.org/ShowLeaderboard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowQuestBoard">
+      <soap:operation soapAction="http://tempuri.org/ShowQuestBoard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptQuest">
+      <soap:operation soapAction="http://tempuri.org/AcceptQuest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reward">
+      <soap:operation soapAction="http://tempuri.org/Reward" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QuestWebServiceSoap12" type="tns:QuestWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddQuest">
+      <soap12:operation soapAction="http://tempuri.org/AddQuest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap12:operation soapAction="http://tempuri.org/AddUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowQuest">
+      <soap12:operation soapAction="http://tempuri.org/ShowQuest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowUser">
+      <soap12:operation soapAction="http://tempuri.org/ShowUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowLeaderboard">
+      <soap12:operation soapAction="http://tempuri.org/ShowLeaderboard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowQuestBoard">
+      <soap12:operation soapAction="http://tempuri.org/ShowQuestBoard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptQuest">
+      <soap12:operation soapAction="http://tempuri.org/AcceptQuest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reward">
+      <soap12:operation soapAction="http://tempuri.org/Reward" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QuestWebService">
+    <wsdl:port name="QuestWebServiceSoap" binding="tns:QuestWebServiceSoap">
+      <soap:address location="https://localhost:44304/QuestWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QuestWebServiceSoap12" binding="tns:QuestWebServiceSoap12">
+      <soap12:address location="https://localhost:44304/QuestWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

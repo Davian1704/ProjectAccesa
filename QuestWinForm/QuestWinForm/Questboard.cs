@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuestWinForm.ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace QuestWinForm
 
     public partial class Questboard : Form
     {
+        QuestWinForm.ServiceReference1.QuestWebServiceSoapClient service = new QuestWinForm.ServiceReference1.QuestWebServiceSoapClient();
         string username;
         public Questboard()
         {
@@ -24,11 +26,19 @@ namespace QuestWinForm
             this.username = username;
             InitializeComponent();
             pictureBoxQuest.Image = Image.FromFile("questboard.png");
-            listBoxQuests.Items.Add("Slay Dragon  30");
+
+            ArrayOfString questboard;
+            questboard = service.ShowQuestBoard();
+            int i = 0;
+            foreach (string row in questboard)
+            {
+                i++;
+                listBoxQuests.Items.Add(row[0] + "   " + row[1] + " " + row[2] + " " + "  " + i);
+            }
+            //listBoxQuests.Items.Add("Slay Dragon  30");
 
             pictureBoxTitle.Image = Image.FromFile("quest.png");
             picBoxBadge2.Image = Image.FromFile("badge.png");
-
             picBoxToken2.Image = Image.FromFile("token.png");
 
         }

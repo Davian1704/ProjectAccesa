@@ -13,6 +13,7 @@ namespace QuestWinForm
 {
     public partial class Form1 : Form
     {
+        QuestWinForm.ServiceReference1.QuestWebServiceSoapClient service = new QuestWinForm.ServiceReference1.QuestWebServiceSoapClient();
         public Form1()
         {
             InitializeComponent();

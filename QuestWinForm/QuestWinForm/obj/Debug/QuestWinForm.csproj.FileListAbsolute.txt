@@ -12,3 +12,17 @@ D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccessa\Que
 D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccessa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Form2.resources
 D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccessa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Leaderboard.resources
 D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccessa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Questboard.resources
+D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\bin\Debug\QuestWinForm.exe.config
+D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\bin\Debug\QuestWinForm.exe
+D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\bin\Debug\QuestWinForm.pdb
+D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.csproj.AssemblyReference.cache
+D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.csproj.SuggestedBindingRedirects.cache
+D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Form1.resources
+D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Form2.resources
+D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Leaderboard.resources
+D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Properties.Resources.resources
+D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Questboard.resources
+D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.csproj.GenerateResource.cache
+D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.csproj.CoreCompileInputs.cache
+D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.exe
+D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.pdb

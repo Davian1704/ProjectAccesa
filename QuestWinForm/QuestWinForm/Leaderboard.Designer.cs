@@ -42,19 +42,19 @@
             // 
             // listBoxRank
             // 
-            this.listBoxRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxRank.FormattingEnabled = true;
-            this.listBoxRank.ItemHeight = 22;
+            this.listBoxRank.ItemHeight = 29;
             this.listBoxRank.Location = new System.Drawing.Point(27, 164);
             this.listBoxRank.Name = "listBoxRank";
-            this.listBoxRank.Size = new System.Drawing.Size(678, 334);
+            this.listBoxRank.Size = new System.Drawing.Size(678, 323);
             this.listBoxRank.TabIndex = 0;
             // 
             // picBoxCrown
             // 
             this.picBoxCrown.Location = new System.Drawing.Point(711, 164);
             this.picBoxCrown.Name = "picBoxCrown";
-            this.picBoxCrown.Size = new System.Drawing.Size(60, 56);
+            this.picBoxCrown.Size = new System.Drawing.Size(42, 37);
             this.picBoxCrown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxCrown.TabIndex = 10;
             this.picBoxCrown.TabStop = false;
