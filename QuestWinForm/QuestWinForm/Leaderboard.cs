@@ -15,12 +15,12 @@ namespace QuestWinForm
     public partial class Leaderboard : Form
     {
         QuestWinForm.ServiceReference1.QuestWebServiceSoapClient service = new QuestWinForm.ServiceReference1.QuestWebServiceSoapClient();
-        string username;
+        int id;
         public Leaderboard()
         { }
-        public Leaderboard(string username)
+        public Leaderboard(int id)
         {
-            this.username = username;
+            this.id= id;
             InitializeComponent();
           
 
@@ -41,7 +41,7 @@ namespace QuestWinForm
         private void homeButton_Click(object sender, EventArgs e)
         {
             Hide();
-            Form2 next = new Form2(username);
+            Form2 next = new Form2(id);
             next.Show();
         }
     }

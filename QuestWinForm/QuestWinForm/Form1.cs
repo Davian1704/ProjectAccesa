@@ -26,9 +26,14 @@ namespace QuestWinForm
             if (!string.IsNullOrEmpty(usernameBox.Text))
             {
                 if (!string.IsNullOrEmpty(passwordBox.Text)) { 
+
+                int id=service.CheckUser(usernameBox.Text.ToString(), passwordBox.Text.ToString());
+
                 Hide();
-                Form2 next = new Form2(usernameBox.Text.ToString());
+                Form2 next = new Form2( id);
                 next.Show();
+
+
                 }
                 else MessageBox.Show("Please enter your password to log in!.", "Warning");
             }
@@ -42,8 +47,11 @@ namespace QuestWinForm
             {
                 if (!string.IsNullOrEmpty(passwordBox.Text))
                 {
+                    int id;
+                    service.AddUser(usernameBox.Text.ToString(),passwordBox.Text.ToString(),0,0);
+                    id = service.CheckUser(usernameBox.Text.ToString(), passwordBox.Text.ToString());
                     Hide();
-                    Form2 next = new Form2(usernameBox.Text.ToString());
+                    Form2 next = new Form2(id);
                     next.Show();
                 }
                 else MessageBox.Show("Please create a password to register!.", "Warning");

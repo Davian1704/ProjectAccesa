@@ -110,6 +110,9 @@
     <None Include="Connected Services\ServiceReference1\QuestWinForm.ServiceReference1.ArrayOfString.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\QuestWinForm.ServiceReference1.CheckUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\QuestWinForm.ServiceReference1.ShowLeaderboardResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -117,9 +120,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\QuestWinForm.ServiceReference1.ShowQuestResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference1\QuestWinForm.ServiceReference1.ShowUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">

@@ -15,15 +15,15 @@ namespace QuestWinForm
     public partial class Questboard : Form
     {
         QuestWinForm.ServiceReference1.QuestWebServiceSoapClient service = new QuestWinForm.ServiceReference1.QuestWebServiceSoapClient();
-        string username;
+        int id;
         public Questboard()
         {
             InitializeComponent();
         }
 
-        public Questboard(string username)
+        public Questboard(int id)
         {
-            this.username = username;
+            this.id = id;
             InitializeComponent();
             pictureBoxQuest.Image = Image.FromFile("questboard.png");
 
@@ -59,7 +59,7 @@ namespace QuestWinForm
         private void homeButton_Click(object sender, EventArgs e)
         {
             Hide();
-            Form2 next = new Form2(username);
+            Form2 next = new Form2(id);
             next.Show();
         }
 
@@ -71,7 +71,7 @@ namespace QuestWinForm
 
             if (result == DialogResult.Yes)
             {
-                //function goes here
+                service.AcceptQuest(id);
                 tabControl1.SelectedTab = BoardPage;
             }
         }

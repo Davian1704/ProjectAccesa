@@ -48,17 +48,18 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
         </s:sequence>
       </s:complexType>
-      <s:element name="ShowUser">
+      <s:element name="CheckUser">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="ShowUserResponse">
+      <s:element name="CheckUserResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ShowUserResult" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="CheckUserResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -124,11 +125,11 @@
   <wsdl:message name="ShowQuestSoapOut">
     <wsdl:part name="parameters" element="tns:ShowQuestResponse" />
   </wsdl:message>
-  <wsdl:message name="ShowUserSoapIn">
-    <wsdl:part name="parameters" element="tns:ShowUser" />
+  <wsdl:message name="CheckUserSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUser" />
   </wsdl:message>
-  <wsdl:message name="ShowUserSoapOut">
-    <wsdl:part name="parameters" element="tns:ShowUserResponse" />
+  <wsdl:message name="CheckUserSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUserResponse" />
   </wsdl:message>
   <wsdl:message name="ShowLeaderboardSoapIn">
     <wsdl:part name="parameters" element="tns:ShowLeaderboard" />
@@ -167,9 +168,9 @@
       <wsdl:input message="tns:ShowQuestSoapIn" />
       <wsdl:output message="tns:ShowQuestSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="ShowUser">
-      <wsdl:input message="tns:ShowUserSoapIn" />
-      <wsdl:output message="tns:ShowUserSoapOut" />
+    <wsdl:operation name="CheckUser">
+      <wsdl:input message="tns:CheckUserSoapIn" />
+      <wsdl:output message="tns:CheckUserSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ShowLeaderboard">
       <wsdl:input message="tns:ShowLeaderboardSoapIn" />
@@ -217,8 +218,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ShowUser">
-      <soap:operation soapAction="http://tempuri.org/ShowUser" style="document" />
+    <wsdl:operation name="CheckUser">
+      <soap:operation soapAction="http://tempuri.org/CheckUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -292,8 +293,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ShowUser">
-      <soap12:operation soapAction="http://tempuri.org/ShowUser" style="document" />
+    <wsdl:operation name="CheckUser">
+      <soap12:operation soapAction="http://tempuri.org/CheckUser" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

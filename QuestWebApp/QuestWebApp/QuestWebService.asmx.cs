@@ -103,12 +103,33 @@ namespace QuestWebApp
         }
 
         [WebMethod]
+        public int CheckUser(string username, string password)
+        {
+
+            myCon.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"D:\\School Books\\An III Semestru II\\Industrial Informatics\\Lab\\ProjectAccesa\\QuestWebApp\\QuestWebApp\\App_Data\\QuestBringer.mdf\";Integrated Security=True";
+            int userId;//username,tokens,badges
+            var procedure = string.Format("Select Id From Users Where Username ={0} And Password   = {1}", username,password);
+            DataSet ds = new DataSet();
+            myCon.Open();
+            using (myCon)
+            {
+                SqlDataAdapter da = new SqlDataAdapter(procedure, myCon);
+                da.Fill(ds, "Users");
+                DataTable dt = ds.Tables[0];
+                DataRow row = dt.Rows[0];
+                userId = int.Parse(row[0].ToString());
+                myCon.Close();
+                return userId;
+            }
+
+        }
+
         public string[] ShowUser(int id)
         {
 
             myCon.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"D:\\School Books\\An III Semestru II\\Industrial Informatics\\Lab\\ProjectAccesa\\QuestWebApp\\QuestWebApp\\App_Data\\QuestBringer.mdf\";Integrated Security=True";
             string[] user;//username,tokens,badges
-            bool find=true; //change find after successful select
+            bool find = true; //change find after successful select
             var procedure = string.Format("Select *,RANK() over (ORDER BY {Badges * 20 + Tokens } From Users Where Id  = {0}", id);
             DataSet ds = new DataSet();
             myCon.Open();
@@ -118,15 +139,16 @@ namespace QuestWebApp
                 da.Fill(ds, "Users");
                 DataTable dt = ds.Tables[0];
                 DataRow row = dt.Rows[0];
-                 user = new string[row.ItemArray.Length];
+                user = new string[row.ItemArray.Length];
                 for (int i = 0; i < row.ItemArray.Length - 1; i++)
                 {
-                  user[i] = row[i].ToString();
+                    user[i] = row[i].ToString();
                 }
 
             }
             myCon.Close();
-            if (find) {
+            if (find)
+            {
                 return user;
             }
             else return null;
@@ -158,7 +180,7 @@ namespace QuestWebApp
                         temp[j] = row[j].ToString();
 
                     }
-                    rankings[i] = string.Join(" ,", temp);
+                    rankings[i] = string.Join(" ;", temp);
                     i++;
                 }
             }
@@ -190,7 +212,7 @@ namespace QuestWebApp
                         temp[j] = row[j].ToString();
 
                     }
-                    quests[i] = string.Join(" ,", temp);
+                    quests[i] = string.Join(" ;", temp);
                     ///questList = string.Concat(questList, quest[i], "; ");
                     i++;
                 }

@@ -45,12 +45,12 @@ namespace QuestWinForm.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ShowQuest", ReplyAction="*")]
         System.Threading.Tasks.Task<QuestWinForm.ServiceReference1.ShowQuestResponse> ShowQuestAsync(QuestWinForm.ServiceReference1.ShowQuestRequest request);
         
-        // CODEGEN: Generating message contract since element name ShowUserResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ShowUser", ReplyAction="*")]
-        QuestWinForm.ServiceReference1.ShowUserResponse ShowUser(QuestWinForm.ServiceReference1.ShowUserRequest request);
+        // CODEGEN: Generating message contract since element name username from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CheckUser", ReplyAction="*")]
+        QuestWinForm.ServiceReference1.CheckUserResponse CheckUser(QuestWinForm.ServiceReference1.CheckUserRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ShowUser", ReplyAction="*")]
-        System.Threading.Tasks.Task<QuestWinForm.ServiceReference1.ShowUserResponse> ShowUserAsync(QuestWinForm.ServiceReference1.ShowUserRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CheckUser", ReplyAction="*")]
+        System.Threading.Tasks.Task<QuestWinForm.ServiceReference1.CheckUserResponse> CheckUserAsync(QuestWinForm.ServiceReference1.CheckUserRequest request);
         
         // CODEGEN: Generating message contract since element name ShowLeaderboardResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ShowLeaderboard", ReplyAction="*")]
@@ -301,15 +301,15 @@ namespace QuestWinForm.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ShowUserRequest {
+    public partial class CheckUserRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ShowUser", Namespace="http://tempuri.org/", Order=0)]
-        public QuestWinForm.ServiceReference1.ShowUserRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CheckUser", Namespace="http://tempuri.org/", Order=0)]
+        public QuestWinForm.ServiceReference1.CheckUserRequestBody Body;
         
-        public ShowUserRequest() {
+        public CheckUserRequest() {
         }
         
-        public ShowUserRequest(QuestWinForm.ServiceReference1.ShowUserRequestBody Body) {
+        public CheckUserRequest(QuestWinForm.ServiceReference1.CheckUserRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -318,16 +318,20 @@ namespace QuestWinForm.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class ShowUserRequestBody {
+    public partial class CheckUserRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int id;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string username;
         
-        public ShowUserRequestBody() {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string password;
+        
+        public CheckUserRequestBody() {
         }
         
-        public ShowUserRequestBody(int id) {
-            this.id = id;
+        public CheckUserRequestBody(string username, string password) {
+            this.username = username;
+            this.password = password;
         }
     }
     
@@ -335,15 +339,15 @@ namespace QuestWinForm.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ShowUserResponse {
+    public partial class CheckUserResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ShowUserResponse", Namespace="http://tempuri.org/", Order=0)]
-        public QuestWinForm.ServiceReference1.ShowUserResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CheckUserResponse", Namespace="http://tempuri.org/", Order=0)]
+        public QuestWinForm.ServiceReference1.CheckUserResponseBody Body;
         
-        public ShowUserResponse() {
+        public CheckUserResponse() {
         }
         
-        public ShowUserResponse(QuestWinForm.ServiceReference1.ShowUserResponseBody Body) {
+        public CheckUserResponse(QuestWinForm.ServiceReference1.CheckUserResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -352,16 +356,16 @@ namespace QuestWinForm.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class ShowUserResponseBody {
+    public partial class CheckUserResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public QuestWinForm.ServiceReference1.ArrayOfString ShowUserResult;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int CheckUserResult;
         
-        public ShowUserResponseBody() {
+        public CheckUserResponseBody() {
         }
         
-        public ShowUserResponseBody(QuestWinForm.ServiceReference1.ArrayOfString ShowUserResult) {
-            this.ShowUserResult = ShowUserResult;
+        public CheckUserResponseBody(int CheckUserResult) {
+            this.CheckUserResult = CheckUserResult;
         }
     }
     
@@ -602,28 +606,30 @@ namespace QuestWinForm.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        QuestWinForm.ServiceReference1.ShowUserResponse QuestWinForm.ServiceReference1.QuestWebServiceSoap.ShowUser(QuestWinForm.ServiceReference1.ShowUserRequest request) {
-            return base.Channel.ShowUser(request);
+        QuestWinForm.ServiceReference1.CheckUserResponse QuestWinForm.ServiceReference1.QuestWebServiceSoap.CheckUser(QuestWinForm.ServiceReference1.CheckUserRequest request) {
+            return base.Channel.CheckUser(request);
         }
         
-        public QuestWinForm.ServiceReference1.ArrayOfString ShowUser(int id) {
-            QuestWinForm.ServiceReference1.ShowUserRequest inValue = new QuestWinForm.ServiceReference1.ShowUserRequest();
-            inValue.Body = new QuestWinForm.ServiceReference1.ShowUserRequestBody();
-            inValue.Body.id = id;
-            QuestWinForm.ServiceReference1.ShowUserResponse retVal = ((QuestWinForm.ServiceReference1.QuestWebServiceSoap)(this)).ShowUser(inValue);
-            return retVal.Body.ShowUserResult;
+        public int CheckUser(string username, string password) {
+            QuestWinForm.ServiceReference1.CheckUserRequest inValue = new QuestWinForm.ServiceReference1.CheckUserRequest();
+            inValue.Body = new QuestWinForm.ServiceReference1.CheckUserRequestBody();
+            inValue.Body.username = username;
+            inValue.Body.password = password;
+            QuestWinForm.ServiceReference1.CheckUserResponse retVal = ((QuestWinForm.ServiceReference1.QuestWebServiceSoap)(this)).CheckUser(inValue);
+            return retVal.Body.CheckUserResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<QuestWinForm.ServiceReference1.ShowUserResponse> QuestWinForm.ServiceReference1.QuestWebServiceSoap.ShowUserAsync(QuestWinForm.ServiceReference1.ShowUserRequest request) {
-            return base.Channel.ShowUserAsync(request);
+        System.Threading.Tasks.Task<QuestWinForm.ServiceReference1.CheckUserResponse> QuestWinForm.ServiceReference1.QuestWebServiceSoap.CheckUserAsync(QuestWinForm.ServiceReference1.CheckUserRequest request) {
+            return base.Channel.CheckUserAsync(request);
         }
         
-        public System.Threading.Tasks.Task<QuestWinForm.ServiceReference1.ShowUserResponse> ShowUserAsync(int id) {
-            QuestWinForm.ServiceReference1.ShowUserRequest inValue = new QuestWinForm.ServiceReference1.ShowUserRequest();
-            inValue.Body = new QuestWinForm.ServiceReference1.ShowUserRequestBody();
-            inValue.Body.id = id;
-            return ((QuestWinForm.ServiceReference1.QuestWebServiceSoap)(this)).ShowUserAsync(inValue);
+        public System.Threading.Tasks.Task<QuestWinForm.ServiceReference1.CheckUserResponse> CheckUserAsync(string username, string password) {
+            QuestWinForm.ServiceReference1.CheckUserRequest inValue = new QuestWinForm.ServiceReference1.CheckUserRequest();
+            inValue.Body = new QuestWinForm.ServiceReference1.CheckUserRequestBody();
+            inValue.Body.username = username;
+            inValue.Body.password = password;
+            return ((QuestWinForm.ServiceReference1.QuestWebServiceSoap)(this)).CheckUserAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

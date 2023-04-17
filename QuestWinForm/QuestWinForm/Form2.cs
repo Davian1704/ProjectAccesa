@@ -14,18 +14,20 @@ namespace QuestWinForm
 {
     public partial class Form2 : Form
     {
-        String username;
+        QuestWinForm.ServiceReference1.QuestWebServiceSoapClient service = new QuestWinForm.ServiceReference1.QuestWebServiceSoapClient();
+        int id;
         public Form2()
         {
             InitializeComponent();
          
         }
 
-        public Form2(String username)
+        public Form2(int id)
         {
-          this.username = username;
+            this.id = id;
             InitializeComponent();
-            usernameBox.Text = username;
+            string userInfo = service.ShowUser(id);
+           // usernameBox.Text = username;
             pictureBoxUser.Image = Image.FromFile("adventurer.png");
             pictureBoxTitle.Image = Image.FromFile("quest.png");
             picBoxRank.Image = Image.FromFile("leaderboard.png");
@@ -77,8 +79,8 @@ namespace QuestWinForm
 
             if (result == DialogResult.Yes)
             {
-                
-                //function goes here
+
+                    service.AddQuest(titleBox.Text.ToString(), taskBox.Text.ToString(),int.Parse(tokenBox.Text),int.Parse(badgeBox.Text),id); 
             }
 
             }
@@ -88,14 +90,14 @@ namespace QuestWinForm
         private void leaderboardButton_Click(object sender, EventArgs e)
         {
             Hide();
-            Leaderboard next = new Leaderboard(username);
+            Leaderboard next = new Leaderboard(id);
             next.Show();
         }
 
         private void questboardButton_Click(object sender, EventArgs e)
         {
             Hide();
-            Questboard next = new Questboard(username);
+            Questboard next = new Questboard(id);
             next.Show();
         }
     }
