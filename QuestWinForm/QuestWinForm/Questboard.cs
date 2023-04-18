@@ -53,11 +53,12 @@ namespace QuestWinForm
             
             ArrayOfString questInfo;
            questInfo= service.ShowQuest(questId);
-            badgeBox.Text = questInfo[4];
-            tokenBox.Text = questInfo[3];
-            creatorBox.Text = questInfo[5];
-            taskBox.Text=questInfo[2];
             titleBox.Text = questInfo[1];
+            taskBox.Text = questInfo[2];
+            tokenBox.Text = questInfo[3];
+            badgeBox.Text = questInfo[4];
+            creatorBox.Text = questInfo[5];
+
         }
 
         private void homeButton_Click(object sender, EventArgs e)

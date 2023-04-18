@@ -11,10 +11,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuestWinForm
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         QuestWinForm.ServiceReference1.QuestWebServiceSoapClient service = new QuestWinForm.ServiceReference1.QuestWebServiceSoapClient();
-        public Form1()
+        public Login()
         {
             InitializeComponent();
             pictureBoxTitle.Image = Image.FromFile("quest.png");

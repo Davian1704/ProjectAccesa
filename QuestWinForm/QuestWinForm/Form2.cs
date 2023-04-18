@@ -55,7 +55,7 @@ namespace QuestWinForm
         private void logoutButton_Click(object sender, EventArgs e)
         {
             Hide();
-            Form1 next = new Form1();
+            Login next = new Login();
             next.Show();
         }
 

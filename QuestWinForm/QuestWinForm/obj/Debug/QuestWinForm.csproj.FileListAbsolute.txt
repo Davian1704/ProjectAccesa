@@ -30,7 +30,6 @@ C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\b
 C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\bin\Debug\QuestWinForm.exe
 C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\bin\Debug\QuestWinForm.pdb
 C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.csproj.AssemblyReference.cache
-C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Form1.resources
 C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Form2.resources
 C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Leaderboard.resources
 C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Properties.Resources.resources
@@ -39,3 +38,4 @@ C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\o
 C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.csproj.CoreCompileInputs.cache
 C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.exe
 C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.pdb
+C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Login.resources

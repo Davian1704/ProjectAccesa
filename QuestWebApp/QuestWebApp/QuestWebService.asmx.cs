@@ -81,18 +81,17 @@ namespace QuestWebApp
         {
             string[] quest;//title,desc,tokens,badges, creator
             myCon.ConnectionString = "Data Source=DESKTOP-C5G2Q55;Initial Catalog=\"D:\\SCHOOL BOOKS\\AN III SEMESTRU II\\INDUSTRIAL INFORMATICS\\LAB\\PROJECTACCESA\\QUESTWEBAPP\\QUESTWEBAPP\\APP_DATA\\QUESTBRINGER.MDF\";Integrated Security=True";
-            var procedure = string.Format("Select Quests.Id, Title,Description,Quests.Tokens,Quests.Badges, Users.Username  From Quests Join Users ON Quests.CreatorId = Users.Id WHERE  Quests.Id = {0}", id);
+            var procedure = string.Format("Select Quests.Id, Title,Description,Quests.Tokens,Quests.Badges, Users.Username From Quests Join Users ON Quests.CreatorId = Users.Id WHERE  Quests.Id = {0}", id);
             DataSet ds = new DataSet();
             myCon.Open();
             using (myCon)
             {
                 SqlDataAdapter da = new SqlDataAdapter(procedure, myCon);
-              //  da.SelectCommand.Parameters.Add("@Id", SqlDbType.Int, 100).Value = id;
-                da.Fill(ds, "Quests");
+                da.Fill(ds,"Quests");
                 DataTable dt = ds.Tables[0];
                 DataRow row = dt.Rows[0];
                quest= new string[row.ItemArray.Length];
-                for (int i= 0; i < row.ItemArray.Length-1; i++)
+                for (int i= 0; i < row.ItemArray.Length; i++)
                 {
                     quest[i] = row[i].ToString();
                     Console.Write(quest[i] = row[i].ToString());
@@ -135,7 +134,7 @@ namespace QuestWebApp
             myCon.ConnectionString = "Data Source=DESKTOP-C5G2Q55;Initial Catalog=\"D:\\SCHOOL BOOKS\\AN III SEMESTRU II\\INDUSTRIAL INFORMATICS\\LAB\\PROJECTACCESA\\QUESTWEBAPP\\QUESTWEBAPP\\APP_DATA\\QUESTBRINGER.MDF\";Integrated Security=True";
             string[] user;//username,tokens,badges
             bool find = true; //change find after successful select
-            var procedure = string.Format("Select * From Users Where Id  = {0}", id);
+            var procedure = string.Format("Select *,RANK() OVER(ORDER BY Badges * 20 + Tokens  DESC) 'Player_Rank ' From Users Where Id  = {0}", id);
             DataSet ds = new DataSet();
             myCon.Open();
             using (myCon)
@@ -180,7 +179,7 @@ namespace QuestWebApp
                 foreach (DataRow row in dt.Rows)
                 {
 
-                    for (int j = 0; j < row.ItemArray.Length - 1; j++)
+                    for (int j = 0; j < row.ItemArray.Length ; j++)
                     {
                         temp[j] = row[j].ToString();
 
@@ -230,7 +229,7 @@ namespace QuestWebApp
         {
             myCon.ConnectionString = "Data Source=DESKTOP-C5G2Q55;Initial Catalog=\"D:\\SCHOOL BOOKS\\AN III SEMESTRU II\\INDUSTRIAL INFORMATICS\\LAB\\PROJECTACCESA\\QUESTWEBAPP\\QUESTWEBAPP\\APP_DATA\\QUESTBRINGER.MDF\";Integrated Security=True";
             var procedure = string.Format("DELETE FROM QUESTS WHERE Id = {0}",id);
-            myCon.Open();
+
             using (myCon)
             {
                 try
@@ -244,6 +243,7 @@ namespace QuestWebApp
                     Console.WriteLine(ex.Message);
                 }
             }
+            myCon.Close();
         }
 
 
@@ -252,7 +252,7 @@ namespace QuestWebApp
         {
             myCon.ConnectionString = "Data Source=DESKTOP-C5G2Q55;Initial Catalog=\"D:\\SCHOOL BOOKS\\AN III SEMESTRU II\\INDUSTRIAL INFORMATICS\\LAB\\PROJECTACCESA\\QUESTWEBAPP\\QUESTWEBAPP\\APP_DATA\\QUESTBRINGER.MDF\";Integrated Security=True";
             var procedure = string.Format("Update  Users SET Tokens=(Tokens+{1}), Badges=(Badges+{2})  WHERE Id = {0}", id,tokens,badges);
-            myCon.Open();
+
             using (myCon)
             {
                 try
@@ -267,6 +267,7 @@ namespace QuestWebApp
                 }
 
             }
+            myCon.Close();
         }
 
 

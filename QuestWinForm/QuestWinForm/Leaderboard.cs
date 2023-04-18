@@ -31,12 +31,11 @@ namespace QuestWinForm
             //add user rankings
             ArrayOfString leaderboard;
              leaderboard = service.ShowLeaderboard();
-            int i=0; string space;
+               string space;
             foreach ( string row in leaderboard) {
                string[] splitrow = row.Split(';');
-                i++;
-               space = new String(' ',29-splitrow[0].Trim().Length );
-                listBoxRank.Items.Add(splitrow[0].Trim()+ space+ splitrow[2].Trim() + space +splitrow[1].Trim() +" " +i);
+               space = new String(' ',32-splitrow[0].Trim().Length );
+                listBoxRank.Items.Add(splitrow[0].Trim()+ space+ splitrow[2].Trim() + new String(' ', 16 - splitrow[2].Trim().Length) + splitrow[1].Trim() +new String(' ', 16 - splitrow[1].Trim().Length)+"#" + splitrow[3].Trim());
             }
         }
 
