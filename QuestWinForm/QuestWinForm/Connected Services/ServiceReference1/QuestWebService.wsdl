@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
       <s:element name="AddQuest">
@@ -60,6 +60,20 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="CheckUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShowUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShowUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShowUserResult" type="tns:ArrayOfString" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -131,6 +145,12 @@
   <wsdl:message name="CheckUserSoapOut">
     <wsdl:part name="parameters" element="tns:CheckUserResponse" />
   </wsdl:message>
+  <wsdl:message name="ShowUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ShowUser" />
+  </wsdl:message>
+  <wsdl:message name="ShowUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ShowUserResponse" />
+  </wsdl:message>
   <wsdl:message name="ShowLeaderboardSoapIn">
     <wsdl:part name="parameters" element="tns:ShowLeaderboard" />
   </wsdl:message>
@@ -171,6 +191,10 @@
     <wsdl:operation name="CheckUser">
       <wsdl:input message="tns:CheckUserSoapIn" />
       <wsdl:output message="tns:CheckUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowUser">
+      <wsdl:input message="tns:ShowUserSoapIn" />
+      <wsdl:output message="tns:ShowUserSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ShowLeaderboard">
       <wsdl:input message="tns:ShowLeaderboardSoapIn" />
@@ -220,6 +244,15 @@
     </wsdl:operation>
     <wsdl:operation name="CheckUser">
       <soap:operation soapAction="http://tempuri.org/CheckUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowUser">
+      <soap:operation soapAction="http://tempuri.org/ShowUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -295,6 +328,15 @@
     </wsdl:operation>
     <wsdl:operation name="CheckUser">
       <soap12:operation soapAction="http://tempuri.org/CheckUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowUser">
+      <soap12:operation soapAction="http://tempuri.org/ShowUser" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

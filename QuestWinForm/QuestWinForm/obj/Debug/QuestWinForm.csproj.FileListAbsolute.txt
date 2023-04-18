@@ -26,3 +26,16 @@ D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\Ques
 D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.csproj.CoreCompileInputs.cache
 D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.exe
 D:\School Books\An III Semestru II\Industrial Informatics\Lab\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.pdb
+C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\bin\Debug\QuestWinForm.exe.config
+C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\bin\Debug\QuestWinForm.exe
+C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\bin\Debug\QuestWinForm.pdb
+C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.csproj.AssemblyReference.cache
+C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Form1.resources
+C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Form2.resources
+C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Leaderboard.resources
+C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Properties.Resources.resources
+C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.Questboard.resources
+C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.csproj.GenerateResource.cache
+C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.csproj.CoreCompileInputs.cache
+C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.exe
+C:\Users\davia\Desktop\Programe\Github\ProjectAccesa\QuestWinForm\QuestWinForm\obj\Debug\QuestWinForm.pdb

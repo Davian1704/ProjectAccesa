@@ -16,6 +16,8 @@ namespace QuestWinForm
     {
         QuestWinForm.ServiceReference1.QuestWebServiceSoapClient service = new QuestWinForm.ServiceReference1.QuestWebServiceSoapClient();
         int id;
+        ArrayOfString questboard;
+        int questId;
         public Questboard()
         {
             InitializeComponent();
@@ -27,17 +29,17 @@ namespace QuestWinForm
             InitializeComponent();
             pictureBoxQuest.Image = Image.FromFile("questboard.png");
 
-            ArrayOfString questboard;
+          
             questboard = service.ShowQuestBoard();
-            int i = 0;
+             string space;
             foreach (string row in questboard)
             {
-                i++;
-                listBoxQuests.Items.Add(row[0] + "   " + row[1] + " " + row[2] + " " + "  " + i);
+                string[] splitrow = row.Split(';');
+                space = new String(' ', 60- splitrow[1].Trim().Length);
+                listBoxQuests.Items.Add(splitrow[1].Trim() + space+ splitrow[3].Trim() + " Tokens " + splitrow[4].Trim()+" Badges");
             }
-            //listBoxQuests.Items.Add("Slay Dragon  30");
 
-            pictureBoxTitle.Image = Image.FromFile("quest.png");
+                pictureBoxTitle.Image = Image.FromFile("quest.png");
             picBoxBadge2.Image = Image.FromFile("badge.png");
             picBoxToken2.Image = Image.FromFile("token.png");
 
@@ -45,15 +47,17 @@ namespace QuestWinForm
 
         private void pickQuestButton_Click(object sender, EventArgs e)
         {
+                string[] splitrow = questboard[listBoxQuests.SelectedIndex].Split(';');
+            questId = int.Parse(splitrow[0]);
             tabControl1.SelectedTab = QuestPage;
-
-
-            //code to give quest id and post it
-            badgeBox.Text = "0";
-            tokenBox.Text = "0";
-            creatorBox.Text = "Soldier X";
-            //taskBox.Text
-            titleBox.Text = "0";
+            
+            ArrayOfString questInfo;
+           questInfo= service.ShowQuest(questId);
+            badgeBox.Text = questInfo[4];
+            tokenBox.Text = questInfo[3];
+            creatorBox.Text = questInfo[5];
+            taskBox.Text=questInfo[2];
+            titleBox.Text = questInfo[1];
         }
 
         private void homeButton_Click(object sender, EventArgs e)
@@ -71,7 +75,8 @@ namespace QuestWinForm
 
             if (result == DialogResult.Yes)
             {
-                service.AcceptQuest(id);
+                service.Reward(id, int.Parse(tokenBox.Text), int.Parse(badgeBox.Text));
+                service.AcceptQuest(questId);
                 tabControl1.SelectedTab = BoardPage;
             }
         }

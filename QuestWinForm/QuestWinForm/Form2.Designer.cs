@@ -40,8 +40,6 @@
             this.badgeCount = new System.Windows.Forms.TextBox();
             this.tokenCount = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rankCount = new System.Windows.Forms.TextBox();
-            this.picBoxRank = new System.Windows.Forms.PictureBox();
             this.usernameBox = new System.Windows.Forms.TextBox();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.logoutButton = new System.Windows.Forms.Button();
@@ -51,6 +49,8 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.Home = new System.Windows.Forms.TabPage();
             this.Quest_Maker = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.titleBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.taskBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -63,15 +63,12 @@
             this.titleLable = new System.Windows.Forms.Label();
             this.pictureBoxTitle = new System.Windows.Forms.PictureBox();
             this.postQuestButton = new System.Windows.Forms.Button();
-            this.titleBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBadge1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxToken1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBadge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxToken)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxRank)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.tabControl.SuspendLayout();
             this.Home.SuspendLayout();
@@ -84,18 +81,18 @@
             // 
             // picBoxBadge1
             // 
-            this.picBoxBadge1.Location = new System.Drawing.Point(17, 46);
+            this.picBoxBadge1.Location = new System.Drawing.Point(55, 50);
             this.picBoxBadge1.Name = "picBoxBadge1";
-            this.picBoxBadge1.Size = new System.Drawing.Size(81, 68);
+            this.picBoxBadge1.Size = new System.Drawing.Size(104, 72);
             this.picBoxBadge1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxBadge1.TabIndex = 7;
             this.picBoxBadge1.TabStop = false;
             // 
             // picBoxToken1
             // 
-            this.picBoxToken1.Location = new System.Drawing.Point(131, 46);
+            this.picBoxToken1.Location = new System.Drawing.Point(215, 50);
             this.picBoxToken1.Name = "picBoxToken1";
-            this.picBoxToken1.Size = new System.Drawing.Size(81, 67);
+            this.picBoxToken1.Size = new System.Drawing.Size(104, 71);
             this.picBoxToken1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxToken1.TabIndex = 8;
             this.picBoxToken1.TabStop = false;
@@ -176,25 +173,23 @@
             // badgeCount
             // 
             this.badgeCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.badgeCount.Location = new System.Drawing.Point(17, 119);
+            this.badgeCount.Location = new System.Drawing.Point(55, 123);
             this.badgeCount.Name = "badgeCount";
             this.badgeCount.ReadOnly = true;
-            this.badgeCount.Size = new System.Drawing.Size(81, 34);
+            this.badgeCount.Size = new System.Drawing.Size(104, 34);
             this.badgeCount.TabIndex = 12;
             // 
             // tokenCount
             // 
             this.tokenCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tokenCount.Location = new System.Drawing.Point(131, 119);
+            this.tokenCount.Location = new System.Drawing.Point(215, 123);
             this.tokenCount.Name = "tokenCount";
             this.tokenCount.ReadOnly = true;
-            this.tokenCount.Size = new System.Drawing.Size(81, 34);
+            this.tokenCount.Size = new System.Drawing.Size(104, 34);
             this.tokenCount.TabIndex = 13;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.rankCount);
-            this.groupBox2.Controls.Add(this.picBoxRank);
             this.groupBox2.Controls.Add(this.picBoxToken1);
             this.groupBox2.Controls.Add(this.badgeCount);
             this.groupBox2.Controls.Add(this.picBoxBadge1);
@@ -205,24 +200,6 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Loot";
-            // 
-            // rankCount
-            // 
-            this.rankCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rankCount.Location = new System.Drawing.Point(260, 119);
-            this.rankCount.Name = "rankCount";
-            this.rankCount.ReadOnly = true;
-            this.rankCount.Size = new System.Drawing.Size(81, 28);
-            this.rankCount.TabIndex = 15;
-            // 
-            // picBoxRank
-            // 
-            this.picBoxRank.Location = new System.Drawing.Point(260, 46);
-            this.picBoxRank.Name = "picBoxRank";
-            this.picBoxRank.Size = new System.Drawing.Size(81, 67);
-            this.picBoxRank.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxRank.TabIndex = 14;
-            this.picBoxRank.TabStop = false;
             // 
             // usernameBox
             // 
@@ -335,6 +312,24 @@
             this.Quest_Maker.TabIndex = 1;
             this.Quest_Maker.Text = "Quest Maker";
             this.Quest_Maker.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(16, 87);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 25);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Title:";
+            // 
+            // titleBox
+            // 
+            this.titleBox.Location = new System.Drawing.Point(137, 91);
+            this.titleBox.Name = "titleBox";
+            this.titleBox.Size = new System.Drawing.Size(281, 22);
+            this.titleBox.TabIndex = 29;
+            this.titleBox.Text = "Quest Title";
             // 
             // label7
             // 
@@ -456,24 +451,6 @@
             this.postQuestButton.UseVisualStyleBackColor = false;
             this.postQuestButton.Click += new System.EventHandler(this.postQuestButton_Click);
             // 
-            // titleBox
-            // 
-            this.titleBox.Location = new System.Drawing.Point(137, 91);
-            this.titleBox.Name = "titleBox";
-            this.titleBox.Size = new System.Drawing.Size(281, 22);
-            this.titleBox.TabIndex = 29;
-            this.titleBox.Text = "Quest Title";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(16, 87);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 25);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "Title:";
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -491,7 +468,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxRank)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.Home.ResumeLayout(false);
@@ -521,8 +497,6 @@
         private System.Windows.Forms.TextBox badgeCount;
         private System.Windows.Forms.TextBox tokenCount;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox rankCount;
-        private System.Windows.Forms.PictureBox picBoxRank;
         private System.Windows.Forms.TextBox usernameBox;
         private System.Windows.Forms.PictureBox pictureBoxUser;
         private System.Windows.Forms.Button logoutButton;

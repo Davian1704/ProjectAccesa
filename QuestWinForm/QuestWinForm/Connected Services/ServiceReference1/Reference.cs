@@ -52,6 +52,13 @@ namespace QuestWinForm.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CheckUser", ReplyAction="*")]
         System.Threading.Tasks.Task<QuestWinForm.ServiceReference1.CheckUserResponse> CheckUserAsync(QuestWinForm.ServiceReference1.CheckUserRequest request);
         
+        // CODEGEN: Generating message contract since element name ShowUserResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ShowUser", ReplyAction="*")]
+        QuestWinForm.ServiceReference1.ShowUserResponse ShowUser(QuestWinForm.ServiceReference1.ShowUserRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ShowUser", ReplyAction="*")]
+        System.Threading.Tasks.Task<QuestWinForm.ServiceReference1.ShowUserResponse> ShowUserAsync(QuestWinForm.ServiceReference1.ShowUserRequest request);
+        
         // CODEGEN: Generating message contract since element name ShowLeaderboardResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ShowLeaderboard", ReplyAction="*")]
         QuestWinForm.ServiceReference1.ShowLeaderboardResponse ShowLeaderboard(QuestWinForm.ServiceReference1.ShowLeaderboardRequest request);
@@ -373,6 +380,74 @@ namespace QuestWinForm.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ShowUserRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ShowUser", Namespace="http://tempuri.org/", Order=0)]
+        public QuestWinForm.ServiceReference1.ShowUserRequestBody Body;
+        
+        public ShowUserRequest() {
+        }
+        
+        public ShowUserRequest(QuestWinForm.ServiceReference1.ShowUserRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ShowUserRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public ShowUserRequestBody() {
+        }
+        
+        public ShowUserRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ShowUserResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ShowUserResponse", Namespace="http://tempuri.org/", Order=0)]
+        public QuestWinForm.ServiceReference1.ShowUserResponseBody Body;
+        
+        public ShowUserResponse() {
+        }
+        
+        public ShowUserResponse(QuestWinForm.ServiceReference1.ShowUserResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ShowUserResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public QuestWinForm.ServiceReference1.ArrayOfString ShowUserResult;
+        
+        public ShowUserResponseBody() {
+        }
+        
+        public ShowUserResponseBody(QuestWinForm.ServiceReference1.ArrayOfString ShowUserResult) {
+            this.ShowUserResult = ShowUserResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ShowLeaderboardRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="ShowLeaderboard", Namespace="http://tempuri.org/", Order=0)]
@@ -630,6 +705,31 @@ namespace QuestWinForm.ServiceReference1 {
             inValue.Body.username = username;
             inValue.Body.password = password;
             return ((QuestWinForm.ServiceReference1.QuestWebServiceSoap)(this)).CheckUserAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        QuestWinForm.ServiceReference1.ShowUserResponse QuestWinForm.ServiceReference1.QuestWebServiceSoap.ShowUser(QuestWinForm.ServiceReference1.ShowUserRequest request) {
+            return base.Channel.ShowUser(request);
+        }
+        
+        public QuestWinForm.ServiceReference1.ArrayOfString ShowUser(int id) {
+            QuestWinForm.ServiceReference1.ShowUserRequest inValue = new QuestWinForm.ServiceReference1.ShowUserRequest();
+            inValue.Body = new QuestWinForm.ServiceReference1.ShowUserRequestBody();
+            inValue.Body.id = id;
+            QuestWinForm.ServiceReference1.ShowUserResponse retVal = ((QuestWinForm.ServiceReference1.QuestWebServiceSoap)(this)).ShowUser(inValue);
+            return retVal.Body.ShowUserResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<QuestWinForm.ServiceReference1.ShowUserResponse> QuestWinForm.ServiceReference1.QuestWebServiceSoap.ShowUserAsync(QuestWinForm.ServiceReference1.ShowUserRequest request) {
+            return base.Channel.ShowUserAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<QuestWinForm.ServiceReference1.ShowUserResponse> ShowUserAsync(int id) {
+            QuestWinForm.ServiceReference1.ShowUserRequest inValue = new QuestWinForm.ServiceReference1.ShowUserRequest();
+            inValue.Body = new QuestWinForm.ServiceReference1.ShowUserRequestBody();
+            inValue.Body.id = id;
+            return ((QuestWinForm.ServiceReference1.QuestWebServiceSoap)(this)).ShowUserAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

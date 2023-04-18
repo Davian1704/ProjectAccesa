@@ -28,16 +28,16 @@ namespace QuestWinForm
                 if (!string.IsNullOrEmpty(passwordBox.Text)) { 
 
                 int id=service.CheckUser(usernameBox.Text.ToString(), passwordBox.Text.ToString());
-
-                Hide();
-                Form2 next = new Form2( id);
-                next.Show();
-
-
+                    if (id != 0){
+                        Hide();
+                        Form2 next = new Form2(id);
+                        next.Show();
+                    }
+                    else MessageBox.Show("Incorrect Login Information!", "Warning");
                 }
-                else MessageBox.Show("Please enter your password to log in!.", "Warning");
+                else MessageBox.Show("Please enter your password to log in!", "Warning");
             }
-            else MessageBox.Show("Please enter your username to log in!.", "Warning");
+            else MessageBox.Show("Please enter your username to log in!", "Warning");
         }
 
 

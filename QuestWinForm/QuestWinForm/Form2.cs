@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuestWinForm.ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,11 +27,10 @@ namespace QuestWinForm
         {
             this.id = id;
             InitializeComponent();
-            string userInfo = service.ShowUser(id);
-           // usernameBox.Text = username;
+          
             pictureBoxUser.Image = Image.FromFile("adventurer.png");
             pictureBoxTitle.Image = Image.FromFile("quest.png");
-            picBoxRank.Image = Image.FromFile("leaderboard.png");
+          //  picBoxRank.Image = Image.FromFile("leaderboard.png");
 
             picBoxBadge.Image = Image.FromFile("badge.png");
             picBoxBadge1.Image = Image.FromFile("badge.png");
@@ -42,12 +42,11 @@ namespace QuestWinForm
 
             tabControl.SelectedTab = Home;
 
-
-            //add modify username function if time allows for it
-            //load user information:
-            rankCount.Text = "Rank#"+1;
-            badgeCount.Text = "0";
-            tokenCount.Text = "0";
+            ArrayOfString userInfo;
+            userInfo = service.ShowUser(id);
+             usernameBox.Text = userInfo[1];
+            badgeCount.Text = userInfo[3];
+            tokenCount.Text = userInfo[4];
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -65,14 +64,13 @@ namespace QuestWinForm
             tabControl.SelectedTab = Quest_Maker;
             badgeBox.Text = "0";
             tokenBox.Text = "0";
-            //taskBox.Text
             titleBox.Text = "0";
         }
 
         private void postQuestButton_Click(object sender, EventArgs e)
         {
 
-            if (int.Parse(badgeBox.Text) >= int.Parse(badgeCount.Text)  && int.Parse(tokenBox.Text) >= int.Parse(tokenCount.Text)) { 
+            if (int.Parse(badgeBox.Text) <= int.Parse(badgeCount.Text)  && int.Parse(tokenBox.Text) <= int.Parse(tokenCount.Text)) { 
             var result = MessageBox.Show("Are you sure you want to post this Quest? It cannot be deleted afterwards!", "Confirm",
                                    MessageBoxButtons.YesNo,
                                    MessageBoxIcon.Question);

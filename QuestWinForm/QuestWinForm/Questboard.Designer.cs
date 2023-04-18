@@ -35,10 +35,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.BoardPage = new System.Windows.Forms.TabPage();
-            this.QuestPage = new System.Windows.Forms.TabPage();
             this.homeButton = new System.Windows.Forms.Button();
-            this.titleBox = new System.Windows.Forms.TextBox();
-            this.taskBox = new System.Windows.Forms.TextBox();
+            this.QuestPage = new System.Windows.Forms.TabPage();
+            this.pictureBoxTitle = new System.Windows.Forms.PictureBox();
+            this.creatorBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.takeQuestButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.picBoxToken2 = new System.Windows.Forms.PictureBox();
             this.picBoxBadge2 = new System.Windows.Forms.PictureBox();
@@ -46,20 +50,17 @@
             this.tokenBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.takeQuestButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.creatorBox = new System.Windows.Forms.TextBox();
-            this.pictureBoxTitle = new System.Windows.Forms.PictureBox();
+            this.taskBox = new System.Windows.Forms.TextBox();
+            this.titleBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQuest)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.BoardPage.SuspendLayout();
             this.QuestPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTitle)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxToken2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBadge2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTitle)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxQuest
@@ -73,12 +74,12 @@
             // 
             // listBoxQuests
             // 
-            this.listBoxQuests.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxQuests.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxQuests.FormattingEnabled = true;
-            this.listBoxQuests.ItemHeight = 20;
+            this.listBoxQuests.ItemHeight = 25;
             this.listBoxQuests.Location = new System.Drawing.Point(319, 63);
             this.listBoxQuests.Name = "listBoxQuests";
-            this.listBoxQuests.Size = new System.Drawing.Size(655, 424);
+            this.listBoxQuests.Size = new System.Drawing.Size(655, 404);
             this.listBoxQuests.TabIndex = 19;
             // 
             // pickQuestButton
@@ -107,9 +108,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(876, 38);
+            this.label2.Location = new System.Drawing.Point(821, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 22);
+            this.label2.Size = new System.Drawing.Size(81, 24);
             this.label2.TabIndex = 22;
             this.label2.Text = "Reward";
             // 
@@ -125,6 +126,7 @@
             // 
             // BoardPage
             // 
+            this.BoardPage.Controls.Add(this.label8);
             this.BoardPage.Controls.Add(this.homeButton);
             this.BoardPage.Controls.Add(this.pickQuestButton);
             this.BoardPage.Controls.Add(this.label1);
@@ -138,6 +140,18 @@
             this.BoardPage.TabIndex = 0;
             this.BoardPage.Text = "Questboard";
             this.BoardPage.UseVisualStyleBackColor = true;
+            // 
+            // homeButton
+            // 
+            this.homeButton.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.homeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeButton.Location = new System.Drawing.Point(6, 404);
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Size = new System.Drawing.Size(113, 39);
+            this.homeButton.TabIndex = 23;
+            this.homeButton.Text = "Home";
+            this.homeButton.UseVisualStyleBackColor = false;
+            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
             // 
             // QuestPage
             // 
@@ -158,36 +172,65 @@
             this.QuestPage.Text = "Quest";
             this.QuestPage.UseVisualStyleBackColor = true;
             // 
-            // homeButton
+            // pictureBoxTitle
             // 
-            this.homeButton.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.homeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeButton.Location = new System.Drawing.Point(6, 404);
-            this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(113, 39);
-            this.homeButton.TabIndex = 23;
-            this.homeButton.Text = "Home";
-            this.homeButton.UseVisualStyleBackColor = false;
-            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
+            this.pictureBoxTitle.Location = new System.Drawing.Point(730, 6);
+            this.pictureBoxTitle.Name = "pictureBoxTitle";
+            this.pictureBoxTitle.Size = new System.Drawing.Size(211, 121);
+            this.pictureBoxTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxTitle.TabIndex = 28;
+            this.pictureBoxTitle.TabStop = false;
             // 
-            // titleBox
+            // creatorBox
             // 
-            this.titleBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleBox.Location = new System.Drawing.Point(219, 87);
-            this.titleBox.Name = "titleBox";
-            this.titleBox.ReadOnly = true;
-            this.titleBox.Size = new System.Drawing.Size(209, 34);
-            this.titleBox.TabIndex = 24;
+            this.creatorBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.creatorBox.Location = new System.Drawing.Point(720, 253);
+            this.creatorBox.Name = "creatorBox";
+            this.creatorBox.ReadOnly = true;
+            this.creatorBox.Size = new System.Drawing.Size(209, 34);
+            this.creatorBox.TabIndex = 31;
             // 
-            // taskBox
+            // label7
             // 
-            this.taskBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taskBox.Location = new System.Drawing.Point(150, 141);
-            this.taskBox.Multiline = true;
-            this.taskBox.Name = "taskBox";
-            this.taskBox.ReadOnly = true;
-            this.taskBox.Size = new System.Drawing.Size(538, 146);
-            this.taskBox.TabIndex = 25;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(725, 205);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 25);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Made by";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(35, 160);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 25);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Description";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(109, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 25);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Title:";
+            // 
+            // takeQuestButton
+            // 
+            this.takeQuestButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.takeQuestButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.takeQuestButton.Location = new System.Drawing.Point(730, 339);
+            this.takeQuestButton.Name = "takeQuestButton";
+            this.takeQuestButton.Size = new System.Drawing.Size(151, 58);
+            this.takeQuestButton.TabIndex = 27;
+            this.takeQuestButton.Text = "Accept Quest";
+            this.takeQuestButton.UseVisualStyleBackColor = false;
+            this.takeQuestButton.Click += new System.EventHandler(this.takeQuestButton_Click);
             // 
             // groupBox3
             // 
@@ -259,65 +302,34 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "Tokens:";
             // 
-            // takeQuestButton
+            // taskBox
             // 
-            this.takeQuestButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.takeQuestButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.takeQuestButton.Location = new System.Drawing.Point(730, 339);
-            this.takeQuestButton.Name = "takeQuestButton";
-            this.takeQuestButton.Size = new System.Drawing.Size(151, 58);
-            this.takeQuestButton.TabIndex = 27;
-            this.takeQuestButton.Text = "Accept Quest";
-            this.takeQuestButton.UseVisualStyleBackColor = false;
-            this.takeQuestButton.Click += new System.EventHandler(this.takeQuestButton_Click);
+            this.taskBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taskBox.Location = new System.Drawing.Point(150, 141);
+            this.taskBox.Multiline = true;
+            this.taskBox.Name = "taskBox";
+            this.taskBox.ReadOnly = true;
+            this.taskBox.Size = new System.Drawing.Size(538, 146);
+            this.taskBox.TabIndex = 25;
             // 
-            // label3
+            // titleBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(109, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 25);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Title:";
+            this.titleBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleBox.Location = new System.Drawing.Point(219, 87);
+            this.titleBox.Name = "titleBox";
+            this.titleBox.ReadOnly = true;
+            this.titleBox.Size = new System.Drawing.Size(209, 34);
+            this.titleBox.TabIndex = 24;
             // 
-            // label4
+            // label8
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(35, 160);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 25);
-            this.label4.TabIndex = 29;
-            this.label4.Text = "Description";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(725, 205);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 25);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Made by";
-            // 
-            // creatorBox
-            // 
-            this.creatorBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.creatorBox.Location = new System.Drawing.Point(720, 253);
-            this.creatorBox.Name = "creatorBox";
-            this.creatorBox.ReadOnly = true;
-            this.creatorBox.Size = new System.Drawing.Size(209, 34);
-            this.creatorBox.TabIndex = 31;
-            // 
-            // pictureBoxTitle
-            // 
-            this.pictureBoxTitle.Location = new System.Drawing.Point(730, 6);
-            this.pictureBoxTitle.Name = "pictureBoxTitle";
-            this.pictureBoxTitle.Size = new System.Drawing.Size(211, 121);
-            this.pictureBoxTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxTitle.TabIndex = 28;
-            this.pictureBoxTitle.TabStop = false;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(354, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 24);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Title";
             // 
             // Questboard
             // 
@@ -333,11 +345,11 @@
             this.BoardPage.PerformLayout();
             this.QuestPage.ResumeLayout(false);
             this.QuestPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTitle)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxToken2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxBadge2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTitle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -368,5 +380,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBoxTitle;
+        private System.Windows.Forms.Label label8;
     }
 }
